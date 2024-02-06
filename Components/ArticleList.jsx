@@ -1,5 +1,5 @@
 function ArticleList(props) {
-  const { articles, setArticles } = props;
+  const { articles } = props;
   return (
     <ul className="article-list">
       {articles.map((article) => {
