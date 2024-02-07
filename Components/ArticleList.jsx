@@ -15,11 +15,10 @@ function ArticleList(props) {
           return (
             <li key={article.article_id} className="article-list-article">
               <img src={article.article_img_url} alt={article.title} />
-              <p>Title:{article.title}</p>
-              <p>Author: {article.author}</p>
-              <p>Votes:{article.votes}</p>
-              <p>Topic:{article.topic}</p>
-
+              Title:{article.title}
+              Author: {article.author}
+              Votes:{article.votes}
+              Topic:{article.topic}
               <Link to={`/article/${article.article_id}`}>
                 <button
                   onClick={() => {
