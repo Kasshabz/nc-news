@@ -33,13 +33,14 @@ function Article(props) {
         </button>
         <p>{selectedArticle.body}</p>
       </div>
-      <ul>
+      <ul className="comments-list">
+        Comments
         {comments.map((comment) => {
           return (
-            <li key={comment.comment_id}>
-              <p>{comment.author}</p>
-              <p>{comment.title}</p>
-              <p>{comment.body}</p>
+            <li className="comment-list-comment" key={comment.comment_id}>
+              <p>Username: {comment.author}</p>
+              <p>Title: {comment.title}</p>
+              <p>Comment: {comment.body}</p>
             </li>
           );
         })}
