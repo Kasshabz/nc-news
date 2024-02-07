@@ -43,6 +43,8 @@ function App() {
               articles={articles}
               setArticles={setArticles}
               selectedArticle={selectedArticle}
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
             />
           }
         />
