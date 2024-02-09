@@ -1,9 +1,9 @@
 import AddComment from "./CommentAdder";
 function CommentCard(props) {
-  const { article_id, setIsLoading, comments, setComments } = props;
+  const { article_id, comments, setComments } = props;
 
   return (
-    <div>
+    <div key={comments.comment_id}>
       <AddComment
         comments={comments}
         setComments={setComments}
@@ -12,7 +12,7 @@ function CommentCard(props) {
       {comments.map((comment) => {
         return (
           <>
-            <section className="comment-list-comment" key={comment.comment_id}>
+            <section className="comment-list-comment">
               <p key={comment.author}> UserName: {comment.author}</p>
 
               <p key={comment.title}> {comment.title}</p>

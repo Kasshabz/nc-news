@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import articlesApi from "../Utils/bluedit-api";
-// import AddComment from "./Comments/CommentAdder";
 import VoteButton from "./Buttons/Votes-Button";
 import CommentCard from "./Comments/Comment-Card";
 
@@ -48,8 +47,12 @@ function Article() {
       </div>
       <div className="comments-list">
         Comments
-       
-        <CommentCard article_id={article_id}setIsLoading={setIsLoading} comments={comments} setComments={setComments}/>
+        <CommentCard
+          article_id={article_id}
+          setIsLoading={setIsLoading}
+          comments={comments}
+          setComments={setComments}
+        />
       </div>
     </>
   );

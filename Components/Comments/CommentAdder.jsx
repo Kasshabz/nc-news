@@ -7,28 +7,26 @@ function AddComment(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     setComments((currComments) => {
       const commentObj = {
         body: newComment,
         article_id: article_id,
-        author: "rogersop",
+        author: "grumpy19",
         created_at: "Posted Now",
         title: "Please stop worrying about Angular 3",
       };
+
       return [commentObj, ...currComments];
     });
     articlesApi
       .post(`/articles/${article_id}/comments`, {
-        userName: "rogersop",
+        userName: "grumpy19",
         body: newComment,
       })
-      .then((res) => {
-        console.log(res, "inside post");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    console.log(newComment);
+      
+    
+
     setNewComment("");
   };
 
@@ -47,6 +45,7 @@ function AddComment(props) {
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
           type="text"
+          required
         />
       </label>
       <button type="submit"> Send </button>
