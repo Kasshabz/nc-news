@@ -30,12 +30,7 @@ function AddComment(props) {
     setNewComment("");
   };
 
-  // const postComment = () => {
-  //   articlesApi.post(`/articles/${article_id}/comments`, {
-  //     username: "jessjelly",
-  //     body: newComment,
-  //   });
-  // };
+  
 
   return (
     <form onSubmit={handleSubmit} action="">
