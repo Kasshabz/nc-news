@@ -1,4 +1,5 @@
 import AddComment from "./CommentAdder";
+import DeleteComment from "../Buttons/DeleteComment";
 function CommentCard(props) {
   const { article_id, comments, setComments } = props;
 
@@ -21,6 +22,7 @@ function CommentCard(props) {
 
               <p key={"date"}>{comment.created_at}</p>
             </section>
+            <DeleteComment setComments={setComments}comments={comment} article_id={article_id} />
           </>
         );
       })}
