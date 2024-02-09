@@ -2,7 +2,7 @@ import { useState } from "react";
 import articlesApi from "../../Utils/bluedit-api";
 
 function AddComment(props) {
-  const { comments, setComments, article_id } = props;
+  const { setComments, article_id } = props;
   const [newComment, setNewComment] = useState("");
 
   const handleSubmit = (e) => {
