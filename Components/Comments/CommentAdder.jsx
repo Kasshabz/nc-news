@@ -1,16 +1,9 @@
 import { useState } from "react";
-import articlesApi from "../Utils/bluedit-api";
+import articlesApi from "../../Utils/bluedit-api";
+
 function AddComment(props) {
   const { comments, setComments, article_id } = props;
-
   const [newComment, setNewComment] = useState("");
-
-  const postComment = () => {
-    articlesApi.post(`articles/${article_id}/comments`, {
-      username:`${commentObj.author}`,
-      body:`${commentObj.body}`
-    })
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,20 +11,33 @@ function AddComment(props) {
       const commentObj = {
         body: newComment,
         article_id: article_id,
-        author: "jessjelly",
+        author: "rogersop",
         created_at: "Posted Now",
         title: "Please stop worrying about Angular 3",
       };
-      console.log(commentObj, "new");
-      const upComments = [commentObj, ...currComments];
-      return upComments;
+      return [commentObj, ...currComments];
     });
+    articlesApi
+      .post(`/articles/${article_id}/comments`, {
+        userName: "rogersop",
+        body: newComment,
+      })
+      .then((res) => {
+        console.log(res, "inside post");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    console.log(newComment);
     setNewComment("");
-    postComment(upComments)
-    
+  };
 
-    
-  }
+  // const postComment = () => {
+  //   articlesApi.post(`/articles/${article_id}/comments`, {
+  //     username: "jessjelly",
+  //     body: newComment,
+  //   });
+  // };
 
   return (
     <form onSubmit={handleSubmit} action="">

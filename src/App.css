@@ -57,7 +57,6 @@ li, ul {
 }
 
 .article-list-article{
-  display: inline-block;
   box-shadow: 0px 0px 2px 2px hsl(0, 0%, 100%);
   background-color: rgb(40, 40, 40);
 }
